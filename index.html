@@ -10,6 +10,7 @@
       margin: 0;
       padding: 0;
     }
+
     header {
       background: #7404be;
       color: white;
@@ -17,10 +18,11 @@
       text-align: center;
       font-size: 24px;
     }
+
     /* Sidebar style */
     .sidebar {
       height: 100vh;
-      width: 120px;
+      width: 200px;
       position: fixed;
       top: 0;
       left: 0;
@@ -43,17 +45,20 @@
 
     /* Main content */
     .main-content {
-      margin-left: 230px;
+      margin-left: 220px;  /* Sidebar से थोड़ा दायें */
+      margin-top: 30px;    /* ऊपर से थोड़ा नीचे */
       padding: 20px;
     }
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+
+    /* Cards layout */
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
       gap: 20px;
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
+      justify-content: center;
+      margin-top: 20px;
     }
+
     .card {
       background: white;
       border-radius: 12px;
@@ -61,20 +66,20 @@
       padding: 20px;
       text-align: center;
       transition: transform 0.3s;
-      /* 👇 ये दो लाइनें जोड़ें */
-  width: 250px;   /* या % में दें, जैसे 30% */
-  height: 300px;  /* fix height ताकि सब same दिखें */
-  
-  /* (optional) ताकि अंदर का content overflow न करे */
-  overflow: hidden;
+      width: 250px;
+      height: 300px;
+      overflow: hidden;
     }
+
     .card:hover {
       transform: translateY(-5px);
     }
+
     .card h2 {
       margin-bottom: 10px;
       color: #333;
     }
+
     .whatsapp-button {
       display: inline-block;
       margin-top: 10px;
@@ -85,60 +90,26 @@
       border-radius: 8px;
       font-weight: bold;
     }
+
     .whatsapp-button:hover {
       background-color: #1ebc57;
     }
-    
+
     footer {
-       background-color: #003366;
+      background-color: #003366;
       color: white;
       text-align: center;
       padding: 10px;
       margin-top: 40px;
     }
-
-  </style>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Sidebar style */
-    .sidebar {
-      height: 100vh;
-      width: 220px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #2c3e50;
-      padding-top: 20px;
-    }
-
-    /* Sidebar links */
-    .sidebar a {
-      display: block;
-      color: white;
-      padding: 15px 20px;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    .sidebar a:hover {
-      background-color: #34495e;
-    }
-
-    /* Main content */
-    .main-content {
-      margin-left: 230px;
-      padding: 20px;
-    }
   </style>
 </head>
 <body>
-<header>
+
+  <header>
     📚 कक्षा 9वीं से 12वीं के व्हाट्सएप ग्रुप (QR कोड सहित)
   </header>
+
   <!-- Sidebar -->
   <div class="sidebar">
     <a href="https://studybank.github.io/home/">🏠 Home</a>
@@ -152,22 +123,25 @@
   <div class="main-content">
     <h1>Welcome to My Website</h1>
     <p>This is the main content area beside the side menu bar.</p>
-  </div>
-  <div class="card">
-      <h2>कक्षा 9वीं</h2>
-      <a class="whatsapp-button" href="https://chat.whatsapp.com/BDnRehOjmeY0NoUvyD5pyR" target="_blank">ग्रुप जॉइन करें</a><br>
-    </div>
-    <div class="card">
-      <h2>कक्षा 10वीं</h2>
-      <a class="whatsapp-button" href="https://chat.whatsapp.com/BhqwGO1xWmd3vKqpZKUUB0" target="_blank">ग्रुप जॉइन करें</a><br>
-    </div>
-    <div class="card">
-      <h2>कक्षा 11वीं</h2>
-      <a class="whatsapp-button" href="https://chat.whatsapp.com/CdHUtf4Xjx204cAVzEbOde" target="_blank">ग्रुप जॉइन करें</a><br>
-    </div>
-    <div class="card">
-      <h2>कक्षा 12वीं</h2>
-      <a class="whatsapp-button" href="https://chat.whatsapp.com/KlGrtio7WKTJaO6q6oEgIj" target="_blank">ग्रुप जॉइन करें</a><br>
+
+    <!-- ✅ Cards अब main-content के अंदर रखे गए हैं -->
+    <div class="cards-container">
+      <div class="card">
+        <h2>कक्षा 9वीं</h2>
+        <a class="whatsapp-button" href="https://chat.whatsapp.com/BDnRehOjmeY0NoUvyD5pyR" target="_blank">ग्रुप जॉइन करें</a>
+      </div>
+      <div class="card">
+        <h2>कक्षा 10वीं</h2>
+        <a class="whatsapp-button" href="https://chat.whatsapp.com/BhqwGO1xWmd3vKqpZKUUB0" target="_blank">ग्रुप जॉइन करें</a>
+      </div>
+      <div class="card">
+        <h2>कक्षा 11वीं</h2>
+        <a class="whatsapp-button" href="https://chat.whatsapp.com/CdHUtf4Xjx204cAVzEbOde" target="_blank">ग्रुप जॉइन करें</a>
+      </div>
+      <div class="card">
+        <h2>कक्षा 12वीं</h2>
+        <a class="whatsapp-button" href="https://chat.whatsapp.com/KlGrtio7WKTJaO6q6oEgIj" target="_blank">ग्रुप जॉइन करें</a>
+      </div>
     </div>
   </div>
 
